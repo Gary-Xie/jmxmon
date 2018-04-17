@@ -3,7 +3,7 @@ jmxmon是一个基于open-falcon的jmx监控插件，通过这个插件，结合
 
 ## 主要功能
 
-通过jmx采集java进程的jvm信息，包括gc耗时、gc次数、gc吞吐、老年代使用率、新生代晋升大小、活跃线程数等信息。
+通过jmx采集java进程的jvm信息，包括内存占用、gc耗时、gc次数、gc吞吐、老年代使用率、新生代晋升大小、活跃线程数等信息。
 
 对应用程序代码无侵入，几乎不占用系统资源。
 
@@ -58,6 +58,9 @@ Open-Falcon>=0.0.5
 | old.gen.mem.ratio  | GAUGE  | 老年代的内存使用率  |
 | thread.active.count  | GAUGE  | 当前活跃线程数  |
 | thread.peak.count  | GAUGE  | 峰值线程数  |
+| heap.mem.init  | GAUGE  | 初始总内存 |
+| heap.mem.max  | GAUGE  | 最大可用内存 |
+| heap.mem.used  | GAUGE  | 已使用内存 |
 
 ## 建议设置监控告警项
 
