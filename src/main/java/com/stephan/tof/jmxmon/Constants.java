@@ -13,6 +13,9 @@ public class Constants {
 	public static final String oldGenMemRatio 				= "old.gen.mem.ratio";
 	public static final String threadActiveCount			= "thread.active.count";
 	public static final String threadPeakCount 				= "thread.peak.count";
+	public static final String heapMemoryUsed               = "heap.mem.used";
+    public static final String heapMemoryInit               = "heap.mem.init";
+    public static final String heapMemoryMax               = "heap.mem.max";
 	
 	public static final String tagSeparator 			= ",";
 	public static final String metricSeparator 			= ".";

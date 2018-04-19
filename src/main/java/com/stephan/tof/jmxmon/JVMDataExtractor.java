@@ -2,6 +2,7 @@ package com.stephan.tof.jmxmon;
 
 import java.io.IOException;
 import java.lang.management.GarbageCollectorMXBean;
+import java.lang.management.MemoryMXBean;
 import java.lang.management.RuntimeMXBean;
 import java.lang.management.ThreadMXBean;
 import java.util.Collection;
@@ -19,12 +20,19 @@ public abstract class JVMDataExtractor<T> extends JMXCall<T> {
 	
 	private final ThreadMXBean threadMXBean;
 	
+	private final MemoryMXBean memoryMXBean;
+	
 	public JVMDataExtractor(ProxyClient proxyClient, int jmxPort) throws IOException {
 		super(proxyClient, jmxPort);
 		gcMXBeanList = proxyClient.getGarbageCollectorMXBeans();
 		runtimeMXBean = proxyClient.getRuntimeMXBean();
 		memoryPoolList = proxyClient.getMemoryPoolProxies();
 		threadMXBean = proxyClient.getThreadMXBean();
+		memoryMXBean = proxyClient.getMemoryMXBean();
+	}
+
+	public MemoryMXBean getMemoryMXBean() {
+		return memoryMXBean;
 	}
 
 	/**
